@@ -1,46 +1,171 @@
+/* =========================================================
+   KURSUSKU - STYLE UTAMA
+   Pertemuan 6
+   ========================================================= */
+
+/* Reset */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f6f8;
-    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f5ff;
+    color: #172554;
+    line-height: 1.6;
 }
 
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
 .container {
-    width: 90%;
-    max-width: 800px;
-    margin: 40px auto;
+    width: min(1100px, 92%);
+    margin: 0 auto;
 }
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    box-shadow: 0 5px 20px rgba(37, 99, 235, 0.25);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-wrap {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.brand {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: .3px;
+}
+
+.site-header nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.site-header nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: .2s ease;
+}
+
+.site-header nav a:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+/* =========================================================
+   PAGE INTRO
+   ========================================================= */
+
+main.container {
+    padding-top: 45px;
+    padding-bottom: 60px;
+}
+
+.page-intro {
+    margin-bottom: 25px;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: #2563eb;
+    background: #dbeafe;
+    border: 1px solid #bfdbfe;
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.page-intro h1 {
+    color: #172554;
+    font-size: clamp(30px, 4vw, 45px);
+    line-height: 1.15;
+    margin-bottom: 12px;
+}
+
+.page-intro p:not(.eyebrow) {
+    color: #64748b;
+    font-size: 17px;
+}
+
+/* =========================================================
+   FORM CARD
+   ========================================================= */
 
 .form-card {
     background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #cbd5e1;
+    border-radius: 22px;
+    padding: 35px;
+    box-shadow:
+        0 15px 35px rgba(30, 64, 175, 0.10),
+        0 3px 10px rgba(15, 23, 42, 0.05);
 }
 
-.form-card h1 {
-    margin-top: 0;
-    margin-bottom: 10px;
-}
+/* =========================================================
+   FORM GRID
+   ========================================================= */
 
-.description {
-    color: #666;
-    margin-bottom: 30px;
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
-.form-group > label {
+.form-group label,
+.form-group legend {
     display: block;
-    font-weight: bold;
-    margin-bottom: 8px;
+    color: #1e293b;
+    font-weight: 700;
+    margin-bottom: 9px;
+    font-size: 16px;
 }
+
+fieldset.form-group {
+    border: 1px solid #cbd5e1;
+    border-radius: 14px;
+    padding: 20px;
+    background: #f8faff;
+}
+
+fieldset.form-group legend {
+    padding: 0 8px;
+    color: #1d4ed8;
+}
+
+/* =========================================================
+   INPUT
+   ========================================================= */
 
 input[type="text"],
 input[type="email"],
@@ -48,46 +173,289 @@ input[type="tel"],
 select,
 textarea {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 7px;
-    font-size: 15px;
+    border: 1px solid #94a3b8;
+    border-radius: 11px;
+    background: #ffffff;
+    color: #0f172a;
+    font-size: 16px;
+    padding: 13px 15px;
+    outline: none;
+    transition: .2s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b8;
 }
 
 textarea {
     resize: vertical;
+    min-height: 120px;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
-    outline: none;
-    border-color: #4a90e2;
-}
+/* =========================================================
+   RADIO & CHECKBOX
+   ========================================================= */
 
-.radio-group,
-.checkbox-group {
-    display: flex;
-    flex-direction: column;
+.choice {
+    display: flex !important;
+    align-items: center;
     gap: 10px;
-}
-
-.radio-group label,
-.checkbox-group label {
-    font-weight: normal;
-}
-
-.btn-submit {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 7px;
-    background: #4a90e2;
-    color: white;
+    margin-bottom: 11px;
+    font-weight: 500 !important;
+    color: #334155 !important;
     cursor: pointer;
-    font-size: 15px;
 }
 
-.btn-submit:hover {
-    opacity: 0.9;
+.choice:last-child {
+    margin-bottom: 0;
+}
+
+.choice input[type="radio"],
+.choice input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    accent-color: #2563eb;
+    cursor: pointer;
+}
+
+/* =========================================================
+   HELP TEXT
+   ========================================================= */
+
+.help {
+    display: block;
+    color: #64748b;
+    margin-top: 6px;
+    font-size: 13px;
+}
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.btn-primary {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
+    transition: .2s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(37, 99, 235, 0.32);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* =========================================================
+   RESULT PAGE
+   ========================================================= */
+
+.result-page {
+    padding-top: 45px;
+}
+
+.alert-success {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    color: white;
+    border-radius: 24px;
+    padding: 35px;
+    margin-bottom: 25px;
+    box-shadow: 0 18px 35px rgba(37, 99, 235, 0.25);
+}
+
+.alert-success::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: rgba(255,255,255,.10);
+    border-radius: 50%;
+    right: -60px;
+    top: -80px;
+}
+
+.alert-success h1 {
+    font-size: clamp(30px, 4vw, 48px);
+    margin-bottom: 8px;
+}
+
+.alert-success p {
+    color: #e0e7ff;
+    font-size: 17px;
+}
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.summary-card {
+    background: white;
+    border: 1px solid #94a3b8;
+    border-radius: 22px;
+    padding: 32px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.summary-list {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+}
+
+.summary-list dt,
+.summary-list dd {
+    padding: 14px 10px;
+    border-bottom: 1px solid #94a3b8;
+}
+
+.summary-list dt {
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+.summary-list dd {
+    color: #334155;
+}
+
+.summary-card hr {
+    border: 0;
+    border-top: 2px solid #cbd5e1;
+    margin: 25px 0;
+}
+
+.summary-card .summary-list p {
+    grid-column: 1 / -1;
+    padding: 10px 0;
+    border-bottom: 1px solid #cbd5e1;
+}
+
+.summary-card .summary-list p:last-child {
+    border-bottom: none;
+    font-size: 22px;
+    color: #1d4ed8;
+}
+
+/* =========================================================
+   LINK BUTTON
+   ========================================================= */
+
+.btn-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 18px;
+    background: #dbeafe;
+    color: #1d4ed8;
+    border: 1px solid #93c5fd;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: .2s ease;
+}
+
+.btn-link:hover {
+    background: #2563eb;
+    color: white;
+}
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.alert-error {
+    background: white;
+    border: 2px solid #ef4444;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(239, 68, 68, 0.12);
+}
+
+.alert-error h1 {
+    color: #b91c1c;
+    margin-bottom: 15px;
+}
+
+.alert-error ul {
+    padding-left: 25px;
+    margin-bottom: 20px;
+}
+
+.alert-error li {
+    color: #7f1d1d;
+    margin-bottom: 6px;
+}
+
+/* =========================================================
+   LOOP LAB
+   ========================================================= */
+
+.form-card h2 {
+    color: #1d4ed8;
+    margin-bottom: 12px;
+}
+
+.form-card hr {
+    border: 0;
+    border-top: 2px solid #cbd5e1;
+    margin: 25px 0;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .nav-wrap {
+        flex-direction: column;
+        padding: 15px 0;
+    }
+
+    .site-header nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-card,
+    .summary-card,
+    .alert-success {
+        padding: 22px;
+    }
+
+    .summary-list {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-list dt {
+        border-bottom: none;
+        padding-bottom: 4px;
+    }
+
+    .summary-list dd {
+        padding-top: 4px;
+    }
 }
